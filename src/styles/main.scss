@@ -1,3 +1,68 @@
+@import "variables";
+@import "mixins";
+
+* {
+  box-sizing: border-box;
+}
+
 body {
+  @include font;
   margin: 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+div:not(.calendar) {
+  @include day-container;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background-color: pink;
+    transform: translateY(-20px);
+    transition: 0.5s;
+    cursor: pointer;
+  }
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, $container-day-width);
+  grid-gap: 1px;
+  justify-content: center;
+}
+
+@each $days, $day-start in $week {
+  .calendar-#{$days} {
+    div:first-child {
+      grid-column-start: $day-start;
+    }
+  }
+}
+
+@for $i from 1 through 31 {
+  .calendar {
+    div:nth-child(#{$i}) {
+      &::after {
+        content: "#{$i}";
+      }
+    }
+  }
+}
+
+@for $i from 28 through 31 {
+  .calendar-#{$i} {
+    div:nth-child(#{$i+1}) {
+      display: none;
+    }
+    div:nth-child(#{$i+2}) {
+      display: none;
+    }
+    div:nth-child(#{$i+3}) {
+      display: none;
+    }
+  }
 }
