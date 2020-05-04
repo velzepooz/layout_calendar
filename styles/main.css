@@ -38,6 +38,13 @@ div:not(.calendar) {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center; }
+  .calendar-29 div:nth-child(31),
+  .calendar-30 div:nth-child(31),
+  .calendar-29 div:nth-child(30),
+  .calendar-28 div:nth-child(31),
+  .calendar-28 div:nth-child(30),
+  .calendar-28 div:nth-child(29) {
+    display: none; }
 
 .calendar-mon div:first-child {
   grid-column-start: 1; }
@@ -152,41 +159,5 @@ div:not(.calendar) {
 
 .calendar div:nth-child(31)::after {
   content: "31"; }
-
-.calendar-28 div:nth-child(29) {
-  display: none; }
-
-.calendar-28 div:nth-child(30) {
-  display: none; }
-
-.calendar-28 div:nth-child(31) {
-  display: none; }
-
-.calendar-29 div:nth-child(30) {
-  display: none; }
-
-.calendar-29 div:nth-child(31) {
-  display: none; }
-
-.calendar-29 div:nth-child(32) {
-  display: none; }
-
-.calendar-30 div:nth-child(31) {
-  display: none; }
-
-.calendar-30 div:nth-child(32) {
-  display: none; }
-
-.calendar-30 div:nth-child(33) {
-  display: none; }
-
-.calendar-31 div:nth-child(32) {
-  display: none; }
-
-.calendar-31 div:nth-child(33) {
-  display: none; }
-
-.calendar-31 div:nth-child(34) {
-  display: none; }
 
 /*# sourceMappingURL=main.css.map */
