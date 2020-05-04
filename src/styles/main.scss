@@ -33,6 +33,15 @@ div:not(.calendar) {
   grid-template-columns: repeat(7, $container-day-width);
   grid-gap: 1px;
   justify-content: center;
+
+  &-29 div:nth-child(31),
+  &-30 div:nth-child(31),
+  &-29 div:nth-child(30),
+  &-28 div:nth-child(31),
+  &-28 div:nth-child(30),
+  &-28 div:nth-child(29) {
+    display: none;
+  }
 }
 
 @each $days, $day-start in $week {
@@ -49,20 +58,6 @@ div:not(.calendar) {
       &::after {
         content: "#{$i}";
       }
-    }
-  }
-}
-
-@for $i from 28 through 31 {
-  .calendar-#{$i} {
-    div:nth-child(#{$i+1}) {
-      display: none;
-    }
-    div:nth-child(#{$i+2}) {
-      display: none;
-    }
-    div:nth-child(#{$i+3}) {
-      display: none;
     }
   }
 }
